@@ -1,0 +1,11 @@
+import sqlite3
+conn = sqlite3.connect('test2.db')
+conn.execute("drop table sched1")
+conn.execute("create table sched1(date,p_name,doctor,department,time,number,id)")
+conn.execute("insert into sched1 values('11','josh','baby josh','psych','9:00','0912323194',2)")
+conn.commit()
+cc=conn.execute("select * from sched1")
+print(cc)
+#conn.execute("create table admin(uname,password)")
+#conn.execute("insert into admin values('localadmin123','password')")
+#conn.commit()
